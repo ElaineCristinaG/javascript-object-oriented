@@ -1,36 +1,6 @@
-/** Bank BytBank */
-/** Created class the Client and current account */
 
-class Client{
-    name;
-    cpf;
-}
-
-class CurrentAccount{
-    agency;
-    numberAccount;
-    _balance;      // is one convention for representing private attributes 
-
-    withdrawalOperation(value){
-        if(this._balance >= value){
-            this._balance -= value;
-            console.log('***Successful withdrawal***')
-            return value;
-        }else{
-            console.log('***Insuficcient balance***')
-            return this._balance;
-        }
-    }
-
-    depositOperation(value){
-        if(value > 0){
-            this._balance += value;
-            console.log('***Successful deposit***')
-            return value;
-        } 
-    }
-}
-
+import { Client } from "./Client.js"
+import { CurrentAccount } from "./CurrentAccount.js";
 /** Instantiating classes and assigning values to objects*/
 
 const client1 = new Client();
