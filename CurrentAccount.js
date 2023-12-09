@@ -2,6 +2,7 @@ export class CurrentAccount{
     agency;
     numberAccount;
     _balance;      // is one convention for representing private attributes 
+    client;
 
     withdrawalOperation(value){
         if(this._balance >= value){
@@ -20,5 +21,10 @@ export class CurrentAccount{
             console.log('***Successful deposit***')
             return value;
         } 
+    }
+
+    transferOperation(value,account){
+        const valueWithdrawal = this.withdrawalOperation(value);
+        account.depositOperation(valueWithdrawal);
     }
 }
