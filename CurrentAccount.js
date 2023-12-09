@@ -24,7 +24,8 @@ export class CurrentAccount{
     }
 
     transferOperation(value,account){
-        const valueWithdrawal = this.withdrawalOperation(value);
-        account.depositOperation(valueWithdrawal);
+        const valueTransfer = this.withdrawalOperation(value);
+        account.depositOperation(valueTransfer);
+        return valueTransfer;
     }
 }
