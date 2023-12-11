@@ -1,8 +1,24 @@
+import { Client } from "./Client.js";
 export class CurrentAccount{
     agency;
     numberAccount;
-    _balance;      // is one convention for representing private attributes 
+     // is one convention for representing private attributes 
     _client;
+    _balance = 0; 
+
+    set client(newValue){
+        if(newValue instanceof Client){
+            this._client = newValue;
+        } 
+    }
+
+    get client(){
+        return this._client;
+    }
+
+    get balance(){
+        return this._balance;
+    }
 
     withdrawalOperation(value){
         if(this._balance >= value){
