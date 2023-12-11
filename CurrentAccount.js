@@ -2,7 +2,7 @@ export class CurrentAccount{
     agency;
     numberAccount;
     _balance;      // is one convention for representing private attributes 
-    client;
+    _client;
 
     withdrawalOperation(value){
         if(this._balance >= value){
